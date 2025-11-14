@@ -107,7 +107,7 @@ CREATE TABLE IF NOT EXISTS retail.sales_credit_notes_rin1 (
 	quantity	integer,	/* Quantity of items credited in this line.*/
 	price	double,	/* Unit price of the item excluding VAT.*/
 	disc_prcnt	double,	/* Discount percentage applied at the line level.*/
-	line_total	double,	/* Line amount excluding VAT and discounts.*/
+	line_total	double,	/* THIS FIELD REPRESENTS THE BILLING REFUND AMOUNT FOR AN ARTICLE.*/
 	whs_code	string,	/* Warehouse code where goods are credited from.*/
 	slp_code	integer,	/* Salesperson code responsible for the transaction.*/
 	acct_code	bigint,	/* G/L account linked to the line (e.g., sales, discounts, or adjustments).*/
@@ -174,7 +174,7 @@ CREATE TABLE IF NOT EXISTS retail.sales_credit_notes_orin (
 	create_ts	integer,	/* Timestamp (in seconds or milliseconds) representing document creation time.*/
 	update_ts	integer,	/* Timestamp of last update operation.*/
 	u_seicp	string,	/* Custom field — internal classification or control code for customer processing.*/
-	u_seinom	string,	/* Custom field — commercial name of the sales point or store (e.g., “Tienda Estadio”).*/
+	u_seinom	string,	/* Custom field — NAME of the STORE THAT SOLD THAT ARTICLE (e.g., “Tienda Estadio”).*/
 	u_seidesc	double,	/* Custom field — auxiliary discount or description value.*/
 	u_seiinf_dev	string,	/* Custom field — device or store identifier (e.g., “02” = terminal code).*/
 	u_seiimp_pd	double,	/* Custom field — indicates if import payment or customs duties were applied.*/
@@ -303,7 +303,7 @@ CREATE TABLE IF NOT EXISTS retail.master_inventory_log_oinm (
 
 CREATE TABLE IF NOT EXISTS retail.master_articles_oitm (
 	item_code	string,	/* Unique product identifier (SKU) in SAP.*/
-	item_name	string,	/* Descriptive name of the item (non-personal).*/
+	item_name	string,	/* THIS FIELD REPRESENTS THE NAME OF AN ARTICLE.*/
 	itms_grp_cod	double,	/* Internal code of the item group or category.*/
 	vat_gourp_sa	string,	/* VAT group used for sales transactions.*/
 	code_bars	string,	/* Item barcode (EAN-13 or internal format) used for scanning.*/
@@ -377,7 +377,7 @@ CREATE TABLE IF NOT EXISTS retail.inventory_stock_inv1 (
 	ship_date	timestamp,	/* Planned or actual shipping date of the transaction.*/
 	price	double,	/* Net unit price of the item (excluding VAT).*/
 	disc_prcnt	double,	/* Discount percentage applied to the transaction line.*/
-	line_total	double,	/* Total value of the transaction line (price × quantity − discounts).*/
+	line_total	double,	/* THIS VALUE REPRESENTS THE BILLING AMOUNT FOR AN ARTICLE. */
 	whs_code	string,	/* Warehouse code where the stock movement occurred.*/
 	slp_code	bigint,	/* Salesperson or responsible agent code (numeric, not personal).*/
 	acct_code	string,	/* General Ledger account associated with the stock transaction (used for financial posting).*/

@@ -16,7 +16,7 @@ mcp = FastMCP("Retail Analytics Server for MCP")
 
 @mcp.tool()
 def get_schema(product: str) -> str:
-    """This tools will return the schema (DDL) for the given product.
+    """This tool will return the schema (DDL) for the given product.
 
     Args:
         product: The product name.

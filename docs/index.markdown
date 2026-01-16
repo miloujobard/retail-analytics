@@ -7,9 +7,6 @@ has_children: false
 
 # MICROSITE_TITLE
 
-| **Authors**     | [WORK_GROUP_NAME](WORK_GROUP_URL){:target="wg"} (See the [Contributors]({{site.baseurl}}/contributing/#contributors)) |
-| **Last Update** | {{site.last_version}}, {{site.last_modified_timestamp}} |
-
 Welcome to the **The AI Alliance**: **MICROSITE_TITLE**. 
 
 {: .tip }
